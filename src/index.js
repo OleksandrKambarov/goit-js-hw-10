@@ -76,3 +76,8 @@ function createCountrieList(country) {
     .join('');
   list.insertAdjacentHTML('beforeend', readyList);
 }
+
+function clearAll() {
+  list.innerHTML = '';
+  div.innerHTML = '';
+}
