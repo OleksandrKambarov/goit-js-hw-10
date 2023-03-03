@@ -62,3 +62,17 @@ function createCountrieCard(country) {
     </div>`;
   div.innerHTML = readyCard;
 }
+
+function createCountrieList(country) {
+  clearAll();
+  const readyList = country
+    .map(
+      c =>
+        `<li class="country-list--item">
+            <img src="${c.flags.svg}" alt="Country flag" width="40", height="30">
+            <span class="country-list--name">${c.name.official}</span>
+        </li>`
+    )
+    .join('');
+  list.insertAdjacentHTML('beforeend', readyList);
+}
