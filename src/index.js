@@ -42,22 +42,22 @@ function onInputChange() {
 
 function createCountrieCard(country) {
   clearAll();
-  const c = country[0];
+  const infoCountries = country[0];
   const readyCard = `<div class="country-card">
         <div class="country-card--header">
             <img src="${
-              c.flags.svg
+              infoCountries.flags.svg
             }" alt="Country flag" width="55", height="35">
-            <h2 class="country-card--name"> ${c.name.official}</h2>
+            <h2 class="country-card--name"> ${infoCountries.name.official}</h2>
         </div>
             <p class="country-card--field">Capital: <span class="country-value">${
-              c.capital
+              infoCountries.capital
             }</span></p>
             <p class="country-card--field">Population: <span class="country-value">${
-              c.population
+              infoCountries.population
             }</span></p>
             <p class="country-card--field">Languages: <span class="country-value">${Object.values(
-              c.languages
+              infoCountries.languages
             ).join(',')}</span></p>
     </div>`;
   div.innerHTML = readyCard;
@@ -67,10 +67,10 @@ function createCountrieList(country) {
   clearAll();
   const readyList = country
     .map(
-      c =>
+      infoCountries =>
         `<li class="country-list--item">
-            <img src="${c.flags.svg}" alt="Country flag" width="40", height="30">
-            <span class="country-list--name">${c.name.official}</span>
+            <img src="${infoCountries.flags.svg}" alt="Country flag" width="40", height="30">
+            <span class="country-list--name">${infoCountries.name.official}</span>
         </li>`
     )
     .join('');
